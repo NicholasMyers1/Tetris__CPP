@@ -1,0 +1,61 @@
+# Project: Project1
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = MAIN.o INIT.o VARIABLES.o KEY_MOUSE.o DRAW.o BUTTON_LOGIC.o LISTS.o HOLD_MODULES_MAIN.o READ_WRITE.o DRAW_BUTTONS.o DRAW_BOARD.o TEXT_INPUT.o
+LINKOBJ  = MAIN.o INIT.o VARIABLES.o KEY_MOUSE.o DRAW.o BUTTON_LOGIC.o LISTS.o HOLD_MODULES_MAIN.o READ_WRITE.o DRAW_BUTTONS.o DRAW_BOARD.o TEXT_INPUT.o
+LIBS     = -L"C:/Users/Nick/Desktop/Desktop Files/Programming Stuff/C++/Coding programs/Dev-Cpp/MinGW32/lib" -L"C:/Users/Nick/Desktop/Desktop Files/Programming Stuff/C++/Coding programs/Dev-Cpp/MinGW32/mingw32/lib" -static-libstdc++ -static-libgcc -lWs2_32 -lMswsock -lAdvApi32 -lglew32s -lglut32 -lglu32 -lwinmm -lgdi32 -lmingw32 -lopengl32 -pthread -g3
+INCS     = -I"C:/Users/Nick/Desktop/Desktop Files/Programming Stuff/C++/Coding programs/Dev-Cpp/MinGW32/include" -I"C:/Users/Nick/Desktop/Desktop Files/Programming Stuff/C++/Coding programs/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.7.2/include"
+CXXINCS  = -I"C:/Users/Nick/Desktop/Desktop Files/Programming Stuff/C++/Coding programs/Dev-Cpp/MinGW32/include" -I"C:/Users/Nick/Desktop/Desktop Files/Programming Stuff/C++/Coding programs/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.7.2/include" -I"C:/Users/Nick/Desktop/Desktop Files/Programming Stuff/C++/Coding programs/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.7.2/include/c++"
+BIN      = Project1.exe
+CXXFLAGS = $(CXXINCS) -std=gnu++11 -g3
+CFLAGS   = $(INCS) -std=gnu++11 -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+MAIN.o: MAIN.cpp
+	$(CPP) -c MAIN.cpp -o MAIN.o $(CXXFLAGS)
+
+INIT.o: INIT.cpp
+	$(CPP) -c INIT.cpp -o INIT.o $(CXXFLAGS)
+
+VARIABLES.o: VARIABLES.cpp
+	$(CPP) -c VARIABLES.cpp -o VARIABLES.o $(CXXFLAGS)
+
+KEY_MOUSE.o: KEY_MOUSE.cpp
+	$(CPP) -c KEY_MOUSE.cpp -o KEY_MOUSE.o $(CXXFLAGS)
+
+DRAW.o: DRAW.cpp
+	$(CPP) -c DRAW.cpp -o DRAW.o $(CXXFLAGS)
+
+BUTTON_LOGIC.o: BUTTON_LOGIC.cpp
+	$(CPP) -c BUTTON_LOGIC.cpp -o BUTTON_LOGIC.o $(CXXFLAGS)
+
+LISTS.o: LISTS.cpp
+	$(CPP) -c LISTS.cpp -o LISTS.o $(CXXFLAGS)
+
+HOLD_MODULES_MAIN.o: HOLD_MODULES_MAIN.cpp
+	$(CPP) -c HOLD_MODULES_MAIN.cpp -o HOLD_MODULES_MAIN.o $(CXXFLAGS)
+
+READ_WRITE.o: READ_WRITE.cpp
+	$(CPP) -c READ_WRITE.cpp -o READ_WRITE.o $(CXXFLAGS)
+
+DRAW_BUTTONS.o: DRAW_BUTTONS.cpp
+	$(CPP) -c DRAW_BUTTONS.cpp -o DRAW_BUTTONS.o $(CXXFLAGS)
+
+DRAW_BOARD.o: DRAW_BOARD.cpp
+	$(CPP) -c DRAW_BOARD.cpp -o DRAW_BOARD.o $(CXXFLAGS)
+
+TEXT_INPUT.o: TEXT_INPUT.cpp
+	$(CPP) -c TEXT_INPUT.cpp -o TEXT_INPUT.o $(CXXFLAGS)
